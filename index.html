@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Angular Demo</title>
+</head>
+<body data-ng-app="">
+<div data-ng-controller="MyController">
+    <input type="text" data-ng-model="query"/>
+    <ul>
+        <li data-ng-repeat="item in items|filter:query" data-ng-show="item.id !=10">
+            <p data-ng-click="whichItem(item)">{{item.name}}</p>
+        </li>
+    </ul>
+    <button data-ng-click="addNew()">Add a new item to the list</button>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<script src="sampleJson.js"></script>
+<script src="controller.js"></script>
+</body>
+</html>
